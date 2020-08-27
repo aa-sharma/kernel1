@@ -1,2 +1,2 @@
 # JellyFish
-A primitive kernel.
+primitive kernel.
