@@ -3,6 +3,11 @@
 
 bits 32			;nasm directive to operate in 32-bit mode
 section .text
+	;multiboot spec
+	align 4
+	dd 0x1BADB002	
+	dd 0x00
+	dd - (0x1BADB002 + 0x00) ;checksum
 
 global start
 extern kmain		;locate kmain from c file

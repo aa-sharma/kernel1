@@ -19,7 +19,7 @@ void kmain(void)
 	screen = 80*25*2;
 	while(j < screen) {
 		vidptr[j] = ' ';   //blank character
-		vidptr[j+1] = 0x15;
+		vidptr[j+1] = 01x13;
 		j = j + 2;
 	}
 
@@ -29,7 +29,7 @@ void kmain(void)
 	//loop to write string to video memory
 	while(str[j] != '\0') {
 		vidptr[i] = str[j];    //store first char
-		vidptr[i+1] = 0x15;    //set colours : black bckg x white text
+		vidptr[i+1] = 01x13;   //set colours : blue backcolor x pink forecolor
 		++j;
 		i = i + 2;
 	}
