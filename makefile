@@ -11,9 +11,9 @@ kernel2.bin: start.asm kmain.c start.o
 	gcc -o kernel.bin $(CFLAGS) start.o kmain.c $(LDFLAGS)
 
 start.o: start.asm
-	nasm -f elf -o start.o start.asm
+	nasm -f elf32 -o start.o start.asm
 
-kmain.o: kmain.c system.h
+kmain.o: kmain.c 
 	gcc $(CFLAGS) -c -o kmain.o kmain.c
 
 clean:

@@ -4,7 +4,7 @@
  * jellyfish.c 
  * August 2020
  * ----------------------------------------
- * /
+ */
 
 void kmain(void)
 {
@@ -16,10 +16,10 @@ void kmain(void)
 
 	//loop to clear screen
 	//25 lines of 80 columns; 2 bytes per element
-	screen = 80*25*2
+	screen = 80*25*2;
 	while(j < screen) {
 		vidptr[j] = ' ';   //blank character
-		vidptr[j+1] = fx00;
+		vidptr[j+1] = 0x15;
 		j = j + 2;
 	}
 
@@ -29,7 +29,7 @@ void kmain(void)
 	//loop to write string to video memory
 	while(str[j] != '\0') {
 		vidptr[i] = str[j];    //store first char
-		vidptr[i+1] = fx00;    //set colours : white bckg x black text
+		vidptr[i+1] = 0x15;    //set colours : black bckg x white text
 		++j;
 		i = i + 2;
 	}
